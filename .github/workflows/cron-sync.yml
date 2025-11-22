@@ -2,7 +2,7 @@ name: DCS Sync All
 
 on:
   schedule:
-    # Kører hver nat kl. 02:00 UTC (≈ 03:00 dansk tid)
+    # ja Kører hver nat kl. 02:00 UTC (≈ 03:00 dansk tid)
     - cron: "0 2 * * *"
   workflow_dispatch:
 

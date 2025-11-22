@@ -1,1 +1,16 @@
+name: DCS Sync All
+
+on:
+  schedule:
+    # Kører hver nat kl. 02:00 UTC (≈ 03:00 dansk tid)
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call DCS Bridge /sync-all
+        run: |
+          curl -sS -w "\nHTTP_STATUS:%{http_code}\n" "https://dcs-bridge.onrender.com/sync-all"
 
